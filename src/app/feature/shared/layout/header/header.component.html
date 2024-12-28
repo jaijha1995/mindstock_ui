@@ -1,0 +1,95 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <!-- <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="logo-link" href="https://www.binance.com/en"><img height="64" src="assets/logo/mindstocs.png"></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">Dropdown</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </li>
+        </ul> -->
+
+        <ul class="navbar-nav">
+            <!-- Static Logo -->
+            <li class="nav-item active">
+              <a class="logo-link" href="https://www.binance.com/en">
+                <img height="64" src="assets/logo/mindstocs.png" alt="Logo">
+              </a>
+            </li>
+          
+            <!-- Dynamic Menu -->
+            <li *ngFor="let item of menuItems" class="nav-item dropdown" [class.dropdown]="item.children?.length > 0">
+              <a
+                class="nav-link dropdown-toggle"
+                *ngIf="item.children?.length > 0"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i [class]="item.icon"></i> {{ item.name }}
+              </a>
+              <a *ngIf="!item.children?.length" class="nav-link" [routerLink]="item.link || '/User/dashboard/home'">
+                <i [class]="item.icon"></i> {{ item.name }}
+              </a>
+
+              <!-- <a *ngIf="!item.children?.length" class="nav-link" [href]="item.link || '#'">
+                <i [class]="item.icon"></i> {{ item.name }}
+              </a> -->
+          
+              <!-- Submenu -->
+              <ul *ngIf="item.children?.length > 0" class="dropdown-menu">
+                <li *ngFor="let child of item.children">
+                  <a class="dropdown-item" [href]="child.link || '#'">{{ child.name }}</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          
+    </div>
+    <!-- <div class="icon-container">
+        <svg class="search-icon bn-svg hover-color" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.7 14.3a9 9 0 1 0-1.4 1.4l4.3 4.3a1 1 0 0 0 1.4-1.4l-4.3-4.3zM9 14a5 5 0 1 1 5-5 5 5 0 0 1-5 5z"></path>
+          </svg>
+          
+
+        <a id="toLoginPage" class="header-menu-rightItem typography-Subtitle4 color-t_primary rwd-768-hide"
+            >
+            <button class="bn-button bn-button__secondary data-size-small" (click)="redirectTo('login')">Log In</button>
+        </a>
+        <button fr="" as="a" class="bn-button bn-button__primary data-size-small header-menu-registerbtn" (click)="redirectTo('signup')">Sign
+            Up</button>
+        <svg class="bn-svg download-icon hover-color" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M19 14v4a1 1 0 01-1 1H6a1 1 0 01-1-1v-4H3v4a3 3 0 003 3h12a3 3 0 003-3v-4h-2zm-7-2.414V3h-2v8.586L8.707 9.293 7.293 10.707l4 4a1 1 0 001.414 0l4-4-1.414-1.414L13 11.586z"
+                >
+            </path>
+        </svg>
+        <svg class="bn-svg language-icon hover-color" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M15.23 20.403a9.011 9.011 0 005.684-7.153h-3.942c-.147 2.86-.793 5.388-1.741 7.153zm-.757-7.153c-.178 4.102-1.217 7.25-2.473 7.25-1.256 0-2.295-3.148-2.473-7.25h4.946zm0-2.5H9.527C9.705 6.648 10.744 3.5 12 3.5c1.256 0 2.295 3.148 2.473 7.25zm2.499 0h3.942a9.01 9.01 0 00-5.683-7.153c.948 1.765 1.594 4.293 1.741 7.153zm-9.936 0c.147-2.862.793-5.392 1.743-7.156a9.01 9.01 0 00-5.693 7.156h3.95zm0 2.5h-3.95a9.01 9.01 0 005.693 7.157c-.95-1.765-1.596-4.295-1.743-7.157z"
+                >
+            </path>
+        </svg>
+
+        <svg class="bn-svg theme-icon hover-color" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 12.67A6.233 6.233 0 0111.33 4 8.015 8.015 0 1020 12.67z" ></path>
+        </svg>
+    </div> -->
+
+
+</nav>

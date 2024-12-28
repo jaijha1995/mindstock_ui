@@ -1,0 +1,142 @@
+
+<div class="login-container">
+    <img style="text-align: center; height: 50px; width: 50px;" src="assets/logo/mindstocs.png" alt="Binance Logo" class="logo" />
+    <h1>Welcome to Mind Stock</h1>
+  
+    <div class="social-login">
+        <button class="google-button">
+            <span class="google-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20px" height="20px">
+                <path fill="#EA4335" d="M24 9.5c3.94 0 6.64 1.67 8.18 3.06L37.5 8C33.67 4.67 29 3 24 3 14.64 3 6.98 8.98 4.48 17.02l7.78 6.06C14.3 15.7 18.64 9.5 24 9.5z"/>
+                <path fill="#4285F4" d="M46.5 24.5c0-1.35-.12-2.66-.35-3.92H24v7.42h12.74c-.56 3.02-2.25 5.58-4.74 7.34l7.3 5.66C43.56 36.1 46.5 30.74 46.5 24.5z"/>
+                <path fill="#FBBC05" d="M10.25 28.5a12.3 12.3 0 0 1-.64-4c0-1.38.24-2.7.64-4l-7.78-6.06C2.3 17.42 1.5 20.6 1.5 24s.8 6.58 2.22 9.56l7.78-6.06z"/>
+                <path fill="#34A853" d="M24 46.5c6 0 11.03-2 14.7-5.4l-7.3-5.66c-2.03 1.36-4.65 2.16-7.4 2.16-5.36 0-9.7-3.98-11.24-9.36l-7.78 6.06C6.98 39.02 14.64 46.5 24 46.5z"/>
+                <path fill="none" d="M0 0h48v48H0z"/>
+              </svg>
+            </span>
+            Continue with Google
+          </button>
+          
+      <button>
+        <fa-icon [icon]="['fab', 'apple']"></fa-icon> Continue with Apple
+      </button>
+    </div>
+  
+    <div class="divider"><span>or</span></div>
+    
+    <div class="signup-part">
+      <form [formGroup]="signupForm">
+        <div class="row">
+            <div class="col-md-6">
+                <label class="label">First Name</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Enter First Name"
+                        formControlName="firstName" aria-describedby="button-addon2" />
+                </div>
+                <div *ngIf="signupForm.get('firstName')?.invalid && (signupForm.get('firstName')?.dirty || signupForm.get('firstName')?.touched)"
+                    class="text-danger">
+                    First Name is required
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <label class="label">Last Name</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Enter Last Name"
+                      formControlName="lastName" aria-describedby="button-addon2" />
+              </div>
+                <div *ngIf="signupForm.get('lastName')?.invalid && (signupForm.get('lastName')?.dirty || signupForm.get('lastName')?.touched)"
+                    class="text-danger">
+                    Last Name is required
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <label class="label">Email</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Enter Email Name"
+                      formControlName="email" aria-describedby="button-addon2" />
+              </div>
+                <div *ngIf="signupForm.get('email')?.invalid && (signupForm.get('email')?.dirty || signupForm.get('email')?.touched)"
+                    class="text-danger">
+                    Email is required
+                </div>
+
+            </div>
+            <div class="col-md-6">
+              <label class="label">Mobile</label>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Enter Mobile No."
+                    formControlName="mobileNo" aria-describedby="button-addon2" />
+            </div>
+              <div *ngIf="signupForm.get('mobileNo')?.invalid && (signupForm.get('mobileNo')?.dirty || signupForm.get('mobileNo')?.touched)"
+                  class="text-danger">
+                  Mobile No. is required
+              </div>
+
+          </div>
+
+          <div class="col-md-6">
+            <label class="label">Password</label>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Enter Password"
+                  formControlName="password" aria-describedby="button-addon2" />
+          </div>
+            <div *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.dirty || signupForm.get('password')?.touched)"
+                class="text-danger">
+                Password is required
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+          <label class="label">Retype Password</label>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Enter Mobile No."
+                formControlName="rePassword" aria-describedby="button-addon2" />
+        </div>
+          <div *ngIf="signupForm.get('rePassword')?.invalid && (signupForm.get('rePassword')?.dirty || signupForm.get('rePassword')?.touched)"
+              class="text-danger">
+              Retype Password is required
+          </div>
+
+      </div>
+         
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                    
+                        <button type="submit" class="btn btn-success" (click)="submit(signupForm.value)"
+                            [disabled]="!signupForm.valid">
+                            <i class="fa fa-plus"></i> Signup
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-danger" (click)="cancel()">
+                            <i class="fa fa-times" aria-hidden="true"></i> Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+
+    <div class="footer">
+      <a href="#">Sign up as an entity</a> or <a (click)="redirectTo()">Log in</a>
+    </div>
+  </div>
+
+  <div class="footer-section">
+    <footer>
+      <a href="#">English</a>
+      <a href="#">Cookies</a>
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+    </footer>
+  </div>
+  
+  <div class="help-button">
+    <svg viewBox="0 0 28 29" class="chat-icon" style="width: 28px;"><path fill-rule="evenodd" clip-rule="evenodd" d="M24.5023 20.4105V14.5771C24.5023 14.2147 24.4839 13.8566 24.4481 13.5036C24.4449 13.4725 24.4416 13.4415 24.4382 13.4105C23.8579 8.16054 19.4069 4.07715 14.0023 4.07715C8.2033 4.07715 3.50229 8.77816 3.50229 14.5771V20.4105H9.33562V13.4105H6.50814C7.06932 9.77621 10.2109 6.99381 14.0023 6.99381C17.7937 6.99381 20.9353 9.77621 21.4964 13.4105H18.669V20.4105H19.7178C18.6728 21.4345 17.3539 22.1799 15.8812 22.5266C15.4563 21.9507 14.7729 21.5771 14.0023 21.5771C12.7136 21.5771 11.669 22.6218 11.669 23.9105C11.669 25.1991 12.7136 26.2438 14.0023 26.2438C14.9526 26.2438 15.7702 25.6757 16.134 24.8606C18.8766 24.295 21.2285 22.6599 22.7342 20.4105H24.5023Z" fill="#202630"></path></svg>
+  </div>
+  

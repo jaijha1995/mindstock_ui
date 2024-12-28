@@ -1,0 +1,79 @@
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Input fields should fill the available space */
+  .form-group input {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .btn-link{
+    width: 20%;
+  }
+
+  .btn-link:disabled {
+    color: gray; /* Adjust color to match your design */
+    cursor: not-allowed; /* Indicates it's disabled */
+    background-color: transparent; /* Ensures no background styling */
+    border: none; /* Removes border if any */
+    opacity: 0.6; /* Makes it look disabled */
+  }
+  
+  .d-flex.justify-content-end {
+    margin-top: 15px;
+    text-align: right;
+  }
+
+  .signupButton {
+    width: 100%;
+    padding: 10px;
+    /* background-color: #f0b90b; */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #121212;
+    margin-top: 10px;
+  }
+
+  .resetButton{
+    width: 100%;
+    padding: 10px;
+    /* background-color: red; */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #121212;
+    margin-top: 10px;
+  }
+  
+  .signupButton:hover {
+    background-color: #e0a807;
+  }
+  
+  /* .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+} */
+
+/* .form-group input {
+    flex: 1;
+    margin-right: 10px;
+} */
+
+.verify-button {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.ml-2 {
+    margin-left: 10px;
+}

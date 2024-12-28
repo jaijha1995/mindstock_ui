@@ -1,0 +1,72 @@
+/* Overlay background to disable interaction */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(81 74 74 / 50%); /* Default semi-transparent black background */
+  z-index: 9998; /* Below the loader but above other content */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay.white-background {
+  background-color: white; /* Set background to white when active */
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Pulse Loader Styles */
+.pulse-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the loader on the screen */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the loader */
+  z-index: 9999; /* Ensure it appears above the overlay */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.pulse-loader.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pulse-loader > div {
+  background-color: currentColor;
+  margin-right: 5%;
+  width: 30%;
+  height: 100%;
+  border-radius: 100%;
+  animation: pulse 1s ease infinite;
+}
+
+.pulse-loader > div:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+.pulse-loader > div:nth-child(3) {
+  margin-right: 0;
+  animation-delay: 200ms;
+}
+
+@keyframes pulse {
+  0%, 60%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  30% {
+    opacity: .1;
+    transform: scale(.01);
+  }
+}

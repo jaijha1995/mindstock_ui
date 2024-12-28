@@ -1,0 +1,37 @@
+
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  
+  .data-item {
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  .data-item strong {
+    color: #333;
+  }
+  
+  .modal-footer {
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .close-modal-btn {
+    padding: 10px 20px;
+    background: #007bff;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .close-modal-btn:hover {
+    background: #0056b3;
+  }
+  

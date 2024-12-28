@@ -1,0 +1,28 @@
+.header-container {
+    background-color: #171515;
+    display: flex;
+    justify-content: center;
+  }
+
+  
+  .options {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .option-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .option-btn:hover {
+    background-color: #0056b3;
+  }
+  

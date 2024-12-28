@@ -1,0 +1,60 @@
+<div class="right-sidebar">
+    <div class="header-part">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <!-- Toggler for responsive collapse -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item active">
+              <a class="logo-link" href="https://www.binance.com/en">
+                <img height="64" src="assets/logo/mindstocs.png" alt="Logo">
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="icon-container">
+          <svg class="search-icon bn-svg hover-color" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.7 14.3a9 9 0 1 0-1.4 1.4l4.3 4.3a1 1 0 0 0 1.4-1.4l-4.3-4.3zM9 14a5 5 0 1 1 5-5 5 5 0 0 1-5 5z"></path>
+          </svg>
+          <a id="toLoginPage" class="header-menu-rightItem">
+            <button class="bn-button bn-button__secondary" (click)="redirectTo('login')">Log In</button>
+          </a>
+          <button class="bn-button bn-button__primary" (click)="redirectTo('signup')">Sign Up</button>
+        </div>
+      </nav>
+    </div>
+  
+    <router-outlet></router-outlet>
+  </div>
+  

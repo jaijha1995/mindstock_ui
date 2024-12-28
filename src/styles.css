@@ -1,0 +1,48 @@
+
+body {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+
+  .btn-success,.btn:disabled {
+    width: 100%;
+    padding: 10px;
+    background-color: #f0b90b;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #121212;
+    margin-top: 10px;
+  }
+
+  .btn-success:hover{
+    background-color: #f5de94;
+    color: #000;
+  }
+
+  .btn-danger{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #121212;
+    margin-top: 10px;
+  }
+
+  .btn-danger:hover{
+    background-color: rgb(239, 99, 99);
+    color: #000;
+  }
+
+  .main-contant {
+    padding: 20px;
+  }

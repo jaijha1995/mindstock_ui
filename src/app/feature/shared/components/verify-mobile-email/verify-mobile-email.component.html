@@ -1,0 +1,86 @@
+<div class="modal-header" style="margin-bottom: 0 !important; background-color: rgb(211, 158, 60);">
+    <h4 class="modal-title f-w w-100" style="color: black;">
+        {{title}}
+    </h4>
+    <div class="close-modal">
+        <i class="fa fa-close" (click)="cancel()" style="color: black; font-size: 20px;"></i>
+    </div>
+</div>
+<div class="modal-body p-20" style="color: black;">
+    <form [formGroup]="verifyForm">
+        <div class="email-part">
+            <label for="email" class=" mb-1">Enter Email</label>
+            <div class="form-group d-flex align-items-center mb-3">
+                <!-- <label for="email" class="mr-2">Enter Email</label> -->
+                <input type="email" id="email" class="form-control" placeholder="Enter your email"
+                    formControlName="email" />
+                <button type="button" class="btn btn-link" (click)="sendOtpEmail(verifyForm.value.email)" [disabled]="!verifyForm.get('email')?.valid">Get OTP</button>
+            </div>
+            <div *ngIf="verifyForm.get('email')?.invalid && (verifyForm.get('email')?.dirty || verifyForm.get('email')?.touched)"
+                class="text-danger">
+                Please enter a valid email.
+            </div>
+        </div>
+
+        <!-- OTP Input for Email -->
+        <div class="email-otp" *ngIf="showEmailOtp">
+            <label for="otpEmail" class="mb-1">Enter OTP for Email</label>
+            <div class="form-group d-flex align-items-center mb-3">
+                <input type="text" id="otpEmail" class="form-control" placeholder="Enter OTP" formControlName="otpEmail" [disabled]="!showEmailOtp"  />
+                <button type="button" class="btn btn-primary ml-2 verify-button" [disabled]="!showEmailOtp" (click)="verifyOtpEmail(verifyForm.value)">Verify OTP</button>
+                <button type="button" class="btn btn-secondary verify-button ml-2" (click)="resendOtpEmail()">Resend OTP</button>
+            </div>
+            <div *ngIf="verifyForm.get('otpEmail')?.invalid && (verifyForm.get('otpEmail')?.dirty || verifyForm.get('otpEmail')?.touched)" class="text-danger">
+                OTP is required.
+            </div>
+        </div>
+
+        <!-- Mobile Input Field with OTP Button -->
+        <div class="mobile-part">
+            <label for="mobileNo" class="mb-1">Enter Mobile</label>
+            <div class="form-group d-flex align-items-center mb-3">
+                <input type="text" id="mobileNo" class="form-control" placeholder="Enter your mobile number"
+                    formControlName="mobileNo" />
+                <button type="button" class="btn btn-link" (click)="sendOtpMobile(verifyForm.value)" [disabled]="!verifyForm.get('mobileNo')?.valid">Get OTP</button>
+            </div>
+            <div *ngIf="verifyForm.get('mobileNo')?.invalid && (verifyForm.get('mobileNo')?.dirty || verifyForm.get('mobileNo')?.touched)"
+                class="text-danger">
+                Please enter a valid mobile number (10 digits).
+            </div>
+        </div>
+
+        <!-- OTP Input for Mobile -->
+        <div class="mobile-otp" *ngIf="showMobileOtp">
+            <label for="otpMobile" class="mb-1">Enter OTP for Mobile</label>
+            <div class="form-group d-flex align-items-center mb-3">
+                <input type="text" id="otpMobile" class="form-control" placeholder="Enter OTP" formControlName="otpMobile" [disabled]="!showMobileOtp" />
+                <button type="button" class="btn btn-primary verify-button ml-2" (click)="verifyOtpMobile(verifyForm.value.otpMobile)" [disabled]="!showMobileOtp">Verify OTP</button>
+                <button type="button" class="btn btn-secondary verify-button ml-2" (click)="resendOtpMobile()">Resend OTP</button>
+            </div>
+            <div *ngIf="verifyForm.get('otpMobile')?.invalid && (verifyForm.get('otpMobile')?.dirty || verifyForm.get('otpMobile')?.touched)" class="text-danger">
+                OTP is required.
+            </div>
+        </div>
+       
+         <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                    
+                        <button type="submit" class="btn btn-primary signupButton" (click)="submit()"
+                            [disabled]="!verifyForm.valid">
+                            <i class="fa fa-plus"></i> Signup
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-danger resetButton" (click)="cancel()">
+                            <i class="fa fa-times" aria-hidden="true"></i> Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+      
+    </form>
+</div>

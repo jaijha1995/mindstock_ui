@@ -1,0 +1,32 @@
+<div class="modal-header" style="margin-bottom: 0 !important; background-color: rgb(211, 158, 60);">
+    <h4 class="modal-title f-w w-100" style="color: black;">
+        {{title}}
+    </h4>
+    <div class="close-modal">
+        <i class="fa fa-close" (click)="cancel()" style="color: black; font-size: 20px;"></i>
+    </div>
+</div>
+<div class="modal-body p-20" style="color: black;">
+    <div class="data-item">
+        <strong>Community Account: </strong> <span>{{this.data?.community_account}}</span>
+      </div>
+      <div class="data-item">
+        <strong>Community Connection:</strong> <span>{{this.data?.community_connection}}</span>
+      </div>
+      <div class="data-item">
+        <strong>Connected: </strong> <span>{{this.data?.connected}}</span>
+      </div>
+      <div class="data-item">
+        <strong>Company: </strong> <span>{{this.data?.company}}</span>
+      </div>
+      <div class="data-item">
+        <strong>Name: </strong> <span>{{this.data?.name}}</span>
+      </div>
+      <div class="data-item">
+        <strong>Language: </strong> <span>{{this.data?.language}}</span>
+      </div>
+      
+    </div>
+    <div class="modal-footer">
+      <button class="close-modal-btn" onclick=" cancel()">Close</button>
+    </div>

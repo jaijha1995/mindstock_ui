@@ -1,0 +1,216 @@
+.right-sidebar{
+    background-color: black;
+}
+
+/* General Navbar Styles */
+.navbar {
+    /* background-color: #232323; */
+    background-color: black;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;  */
+  }
+  
+  .navbar-brand {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .navbar-brand:hover {
+    color: #ffd700; /* Gold hover effect */
+  }
+  
+  .navbar-toggler {
+    border: none;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,0.7)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+  /* Navigation Menu Styles */
+  .navbar-nav {
+    list-style: none; /* Remove bullets */
+    display: flex; /* Display items in a single row */
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-nav .nav-item {
+    position: relative;
+  }
+  
+  .navbar-light .navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1rem;
+    margin: 0 15px; /* Space between menu items */
+    text-transform: capitalize;
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #ffd700; /* Gold hover effect */
+  }
+  
+  .navbar-light .navbar-nav .nav-item.active .nav-link {
+    color: #ffd700; /* Gold for active link */
+    font-weight: bold;
+  }
+  
+  /* Dropdown Styles */
+  .nav-item .dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the parent menu item */
+    left: 0;
+    background-color: #333; /* Dark dropdown background */
+    border: none;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .nav-item:hover .dropdown-menu {
+    display: block; /* Show dropdown on hover */
+  }
+  
+  .dropdown-item {
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap; /* Prevent text wrapping */
+    text-decoration: none;
+    
+  }
+  
+  .dropdown-item:hover {
+    /* background-color: #444; */
+    color: #ffd700; /* Gold hover effect */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 991.98px) {
+    .navbar-nav {
+      flex-direction: column; /* Stack items vertically on small screens */
+    }
+  
+    .nav-item .dropdown-menu {
+      position: static;
+      box-shadow: none;
+    }
+  }
+  
+  .dropdown-menu{
+    list-style: none;
+  }
+  
+  .icon-container {
+    display: flex; /* Ensures the icons and buttons are in a single row */
+    gap: 16px; /* Adds space between icons and buttons */
+    align-items: center; /* Vertically centers the content */
+  }
+  
+  .bn-svg {
+    width: 24px; /* Icon width */
+    height: 24px; /* Icon height */
+    fill: currentColor; /* Default color (inherits from parent) */
+    transition: fill 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  /* Hover effect for icons */
+  .bn-svg.hover-color:hover {
+    fill: #ffd700; /* Change color on hover to gold */
+  }
+  
+  .bn-button {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Log In Button */
+  .bn-button__secondary {
+    background-color: #fff; /* White background */
+    color: #007bff; /* Blue text */
+    border: 1px solid #007bff; /* Blue border */
+  }
+  
+  .bn-button__secondary:hover {
+    background-color: #f0f8ff; /* Light blue on hover */
+    color: #007bff; /* Retain blue text */
+  }
+  
+  /* Sign Up Button */
+  .bn-button__primary {
+    background-color: #ffd700; /* Gold background */
+    color: #000; /* Black text */
+    font-weight: bold; /* Bold text */
+    border: none; /* No border */
+  }
+  
+  .bn-button__primary:hover {
+    background-color: #e6be00; /* Darker gold on hover */
+    color: #000; /* Retain black text */
+  }
+  /* Navbar responsiveness */
+/* Ensure navbar items stack properly on small screens */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+.collapse {
+  flex-grow: 1;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item {
+  margin: 5px 0;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.bn-button {
+  margin: 5px;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+
+  
+  
+  
